@@ -16,9 +16,10 @@ class Elm
         <div id="<?= $app_name ?>"></div>
 
         <script>
+            var app;
             window.addEventListener('load', function () {
                 <?php if (! empty($flags)) : ?>
-                Elm.<?= $app_name ?>.Main.init( {
+                app = Elm.<?= $app_name ?>.Main.init( {
                     node: document.getElementById( '<?= $app_name ?>' ),
                     flags: <?= json_encode( $flags ) ?>
                 });
